@@ -4,17 +4,17 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const images = [
-  "/images/1.png",
-  "/images/2.png",
-  "/images/3.png",
-  "/images/4.png",
-  "/images/5.png",
-  "/images/6.png",
-  "/images/7.png",
-  "/images/8.png",
-  "/images/9.png",
-  "/images/10.png",
-  "/images/11.png",
+  "/images/1.svg",
+  "/images/2.svg",
+  "/images/3.svg",
+  "/images/4.svg",
+  "/images/5.svg",
+  "/images/6.svg",
+  "/images/7.svg",
+  "/images/8.svg",
+  "/images/9.svg",
+  "/images/10.svg",
+  "/images/11.svg",
 ];
 
 export default function Home() {
@@ -25,7 +25,6 @@ export default function Home() {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
 
-      // Calculate the active image index
       const index = Math.floor(scrollPosition / windowHeight);
       setActiveIndex(Math.min(index, images.length - 1));
     };
@@ -39,7 +38,6 @@ export default function Home() {
 
   return (
       <div className="relative h-[100vh] w-screen">
-        {/* Background fixed images */}
         <div className="fixed top-0 left-0 w-full h-full">
           {images.map((src, index) => (
               <div
@@ -59,7 +57,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Spacer divs to create scrollable area */}
         <div className="h-[100vh]" />
         {images.map((_, index) => (
             <div key={index} className="h-[100vh]" />
